@@ -62,15 +62,15 @@ export async function parseFileContent(content, mimetype) {
 
   // 5. Data Cleaning & Canonicalization
   // We apply this *after* all blocks are parsed.
-  const cleanedData = context.allParsedData.map(record => cleanRecord(record));
+  // const cleanedData = context.allParsedData.map(record => cleanRecord(record));
 
   return { 
-    parsedData: cleanedData, 
+    parsedData: context.allParsedData, 
     fragmentsSummary: context.fragmentsSummary 
   };
 }
 
-function cleanRecord(record) {
+/* function cleanRecord(record) {
   // Example: Normalize prices
   // This is where you'd handle "9.99 USD", "$9.99", "9,99"
   // from the test guide [cite: 172-174]
@@ -85,4 +85,4 @@ function cleanRecord(record) {
   }
   
   return record;
-}
+} */ 
